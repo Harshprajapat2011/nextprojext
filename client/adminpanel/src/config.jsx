@@ -1,0 +1,1 @@
+export let apiBaseurl= "http://localhost:8000/admin"

@@ -1,0 +1,31 @@
+let express=require("express")
+const { colorRoutes } = require("./colorRoutes")
+const { sizeRoutes } = require("./sizeRoutes")
+const { materialRoutes } = require("./materialRoutes")
+const { faqRoutes } = require("./faqRoutes")
+const { categoryRoutes } = require("./categoryRoutes")
+const { subsubCategoryRoutes } = require("./subsubCategoryRoutes")
+const { subCategoryRoutes } = require("./subCategoryRoutes")
+const { productRoutes } = require("./productRoutes")
+const { whyChooseUsRoutes } = require("./whyChooseUsRoutes")
+const { sliderRoutes } = require("./sliderRoutes")
+const { testimonialsRoutes } = require("./testimonialsRoutes")
+const { countryRoutes } = require("./countryRoutes")
+
+let adminRoutes=express.Router()
+
+adminRoutes.use("/color",colorRoutes)
+adminRoutes.use("/size",sizeRoutes)
+adminRoutes.use("/material",materialRoutes)
+adminRoutes.use("/faq",faqRoutes)
+adminRoutes.use("/category",categoryRoutes)
+adminRoutes.use("/subCategory",subCategoryRoutes)
+adminRoutes.use("/subsubCategory",subsubCategoryRoutes)
+adminRoutes.use("/product",productRoutes)
+adminRoutes.use("/whyChooseUs",whyChooseUsRoutes)
+adminRoutes.use("/slider",sliderRoutes)
+adminRoutes.use("/testimonials",testimonialsRoutes)
+adminRoutes.use("/country",countryRoutes)
+
+
+module.exports={adminRoutes}
