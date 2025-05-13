@@ -124,4 +124,4 @@ let colorupdate=async (req,res)=>{
 
 
 
-module.exports={colorview,colorinsert,colordelete,coloredit,colorupdate,}
+module.exports={colorview,colorinsert,colordelete,coloredit,colorupdate}

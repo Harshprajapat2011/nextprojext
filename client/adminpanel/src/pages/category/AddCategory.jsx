@@ -35,7 +35,9 @@ export default function AddCategory() {
     else{
       axios.post(`${apiBaseurl}/category/insert`, data)
       .then((res) => {
-        if(res.data.status){
+        let check=res.data.error==undefined?true:false;
+        if(check){
+             if(res.data.status){
         console.log(res.data);
         // console.log(res.data.status=0);
         e.target.reset()
@@ -46,8 +48,16 @@ export default function AddCategory() {
           navigate('/view-category');
         }, 1000);
         }
-        else if(res.data.status=0){
-          toast.denger("res.data.msg")
+        // else if(res.data.status=0){
+        //   toast.denger("res.data.msg")
+        // }
+        }
+        else{
+          toast.warning(res.data.msg,{
+            position:"top-center",
+            theme:"dark",
+            autoClose:1500
+          })
         }
       })
     }
